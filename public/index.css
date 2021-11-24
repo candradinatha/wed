@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'Montserrat Medium';
+  src: local('Montserrat-Medium'), url(./fonts/Montserrat-Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Montserrat ExtraBold';
+  src: local('Montserrat-ExtraBold'), url(./fonts/Montserrat-ExtraBold.otf) format('opentype');
+}
+
+.loader {
+  background-color: #fff;
+}
+
+.loader--show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition:visibility 0.2s linear,opacity 0.3s linear;
+}
+
+.loader--hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition:visibility 0.2s linear,opacity 0.3s linear;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container {
+    position: absolute;
+    width: 100vw;
+height: 100vh;
+  }
+  .image-container {
+position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .loader-image {
+    width: 10vmin;
+  }
+
+  .loading-bar {
+width: 30vmin;
+  }
+
+.meter { 
+  height: 2vmin;  /* Can be anything */
+  position: relative;
+  margin: 1vmin 0 20px 0; /* Just for demo spacing */
+  background: white;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  border: 2px solid #016D6B;
+  padding: 2px;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+      -webkit-border-top-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+          -moz-border-radius-topright: 8px;
+      -moz-border-radius-bottomright: 8px;
+              border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+      -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+          -moz-border-radius-topleft: 20px;
+        -moz-border-radius-bottomleft: 20px;
+              border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+  background-color: #008080;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #016D6B),
+    color-stop(1, #008080)
+    );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    #016D6B 37%,
+    #008080 69%
+    );
+  -webkit-box-shadow: 
+    inset 0 2px 9px  #008080,
+    inset 0 -2px 6px #016D6B;
+  -moz-box-shadow: 
+    inset 0 2px 9px  #008080,
+    inset 0 -2px 6px #016D6B;
+  box-shadow: 
+    inset 0 2px 9px  #008080,
+    inset 0 -2px 6px #016D6B;
+  position: relative;
+  overflow: hidden;
+}	
+.meter > span:after, .animate > span > span {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-image: 
+      -webkit-gradient(linear, 0 0, 100% 100%, 
+        color-stop(.25, rgba(255, 255, 255, .2)), 
+        color-stop(.25, transparent), color-stop(.5, transparent), 
+        color-stop(.5, rgba(255, 255, 255, .2)), 
+        color-stop(.75, rgba(255, 255, 255, .2)), 
+        color-stop(.75, transparent), to(transparent)
+      );
+  
+  z-index: 1;
+  background-size: 50px 50px;
+  -webkit-background-size: 50px 50px;
+  -moz-background-size: 50px 50px;
+  -webkit-animation: move 2s linear infinite;
+      -webkit-border-top-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+          -moz-border-radius-topright: 8px;
+      -moz-border-radius-bottomright: 8px;
+              border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+      -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+          -moz-border-radius-topleft: 20px;
+        -moz-border-radius-bottomleft: 20px;
+              border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+  overflow: hidden;
+  animation: move 2s linear ;
+}
+
+.animate > span:after {
+  display: none;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+      background-position: 50px 50px;
+  }
+}
+
+@-webkit-keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+
+.nostripes > span > span, .nostripes > span:after {
+  -webkit-animation: none;
+  background-image: none;
+  animation: none;
+}
